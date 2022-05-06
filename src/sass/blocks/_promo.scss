@@ -2,4 +2,58 @@
     min-height: 650px;
     padding: 21px 0 93px 0;
     background: url(../img/main.jpg) center (center/cover) no-repeat;
+    &__header {
+        margin-top: 91px;
+        font-weight: 700;
+        font-size: 42px;
+        text-align: right;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        span {
+            display: block;
+            font-weight: 500;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+    }
+    &__icons {
+        margin-top: 60px;
+        display: flex;
+        justify-content: right;
+    }
+    &__icons-block {
+        margin-right: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__message {
+        width: 130px;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 14px;
+        color: #FFFFFF;
+    }
+    &__warp-footer {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+    &__to-catalog {
+        margin-top: 8px;
+        color: white;
+        a {
+            color: white;
+        }
+    }
+    &__button {
+        margin-top: 65px;
+        width: 303px;
+        height: 54px;
+    }
 }

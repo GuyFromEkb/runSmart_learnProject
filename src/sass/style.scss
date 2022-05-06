@@ -1,12 +1,17 @@
 @import 'base/variables';
-@import 'blocks/promo';
-@import 'blocks/header';
-@import 'blocks/button';
 * {
-    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-family: "Museo Sans Cyrl", sans-serif;
 }
 
 .container {
     width: 950px;
     margin: 0 auto;
 }
+
+@import 'blocks/promo';
+@import 'blocks/header';
+@import 'blocks/button';
+@import 'blocks/benefits';
+@import 'blocks/sybheader';
+@import 'blocks/consultation';
+@import 'blocks/form';

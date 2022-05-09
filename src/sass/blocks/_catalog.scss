@@ -1,5 +1,5 @@
 .catalog {
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     &__tabs {
         margin-top: 46px;
         display: flex;
@@ -78,6 +78,18 @@
             font-size: 14px;
             &:hover {
                 color: $main-color
+            }
+            &_back {
+                display: inline-block;
+                margin-left: 50%;
+                transform: translateX(-50%);
+                font-weight: 500;
+                font-size: 14px;
+                color: $main-color;
+                text-transform: uppercase;
+                &:hover {
+                    color: $main-color;
+                }
             }
         }
         &__line {

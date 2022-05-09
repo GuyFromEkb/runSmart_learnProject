@@ -6,6 +6,7 @@
         justify-content: center;
     }
     &__tab {
+        list-style-type: none;
         margin: 0 5px;
         text-align: center;
         line-height: 47px;
@@ -22,7 +23,7 @@
         div {
             transform: skewX(26deg);
         }
-        &:hover {
+        &_active {
             background-color: $main-color;
             color: white;
             box-shadow: 3px 3px 14px red;
@@ -30,14 +31,24 @@
         }
     }
     &__content {
+        display: none;
+        flex-wrap: wrap;
         margin-top: 57px;
+        &_active {
+            display: flex;
+        }
     }
     &-item {
+        margin-right: 20px;
+        margin-bottom: 20px;
         overflow: hidden;
         width: 303px;
         min-height: 442px;
         padding: 20px;
         border: 2px solid #E8E8E8;
+        &:nth-child(3n+3) {
+            margin-right: 0;
+        }
         &__img {
             display: block;
             margin: 0 auto;
@@ -57,11 +68,12 @@
             text-align: center;
         }
         &__link {
-            display: block;
-            text-align: center;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
             margin-top: 10px;
             text-transform: uppercase;
-            color: $main-color;
+            color: #c70101;
             font-weight: 500;
             font-size: 14px;
             &:hover {

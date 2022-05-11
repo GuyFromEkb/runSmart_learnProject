@@ -42,11 +42,18 @@ $(document).ready(function() {
 
 });
 
-// $(document).ready(function() {
-//     $('.carusel__inner').slick({
-//         prevArrow: '<button type="button" class="slick-prev"><img src="icons/left.svg"></button>',
-//         nextArrow: '<button type="button" class="slick-next"><img src="icons/right.svg"></button>',
-//         speed: 1200
+//  Modal Windows
 
-//     });
-// });
+$('[data-modal=consultation]').on('click', function() {
+    $('.modal-window, #callBack ').fadeIn('slow');
+});
+
+$('.button_catalog').each(function(i) {
+    $(this).on('click', function() {
+        $('#order .modal-window__text').text($('.catalog-item__subtitle').eq(i).text());
+        $('.modal-window, #order ').fadeIn('slow');
+    });
+});
+$('.modal-window__close ').on('click', function() {
+    $('.modal-window').fadeOut('slow');
+});

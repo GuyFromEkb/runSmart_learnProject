@@ -55,5 +55,50 @@ $('.button_catalog').each(function(i) {
     });
 });
 $('.modal-window__close ').on('click', function() {
-    $('.modal-window').fadeOut('slow');
+    $('.modal-window , #order , #callBack').fadeOut('slow');
 });
+
+// jQuery validator
+
+function formValidate(idItem) {
+    $(idItem).validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 2
+            },
+            phone: {
+                required: true,
+                digits: true,
+                minlength: 9
+
+            },
+            email: {
+                required: true,
+                email: true
+
+            }
+        },
+        messages: {
+            name: {
+                required: "Нам нужно знать как к вам обращаться",
+                minlength: jQuery.validator.format("Ваше имя не может быть короче {0} букв ")
+            },
+            phone: {
+                minlength: "Формат для ввода номера:<br>89001112233",
+                required: "Введите ваш мобильный номер телефона",
+                digits: "Формат для ввода номера:<br>89001112233"
+            },
+            email: {
+                required: "Укажите ваш E-mail адрес",
+                email: "Формат для ввода e-mail:<br>name@domain.com"
+            }
+        },
+    });
+}
+
+formValidate('#orderForm');
+
+formValidate('#siteForm');
+
+formValidate('#callbackForm');

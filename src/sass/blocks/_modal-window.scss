@@ -34,9 +34,10 @@
     }
     &__container {
         // display: none;
+        padding-bottom: 28px;
         padding-top: 28px;
         width: 380px;
-        height: 387px;
+        min-height: 387px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

@@ -83,10 +83,10 @@
         <div class="container">
             <h2 class="subheader subheader_consultation">Получите бесплатную консультацию <br> по подбору пульсометра </h2>
             <div class="consultation__text">Просто заполните форму заявки <br> и мы перезвоним вам в течении <span>10</span> минут</div>
-            <form class="form" action="#">
-                <input class="form__input" name="name" required placeholder="Ваше имя" type="text">
-                <input class="form__input" name="phone" placeholder="Ваш телефон" type="number">
-                <input class="form__input" name="email" placeholder="Ваш E-mail" type="email">
+            <form id="siteForm" class="form" action="#">
+                <input class="form__input" name="name" placeholder="Ваше имя">
+                <input class="form__input" name="phone" placeholder="Ваш телефон">
+                <input class="form__input" name="email" placeholder="Ваш E-mail">
                 <button class="button button_consultation">заказать консультацию</button>
             </form>
 
@@ -477,10 +477,10 @@
             <div class="modal-window__close">&#10006;</div>
             <div class="modal-window__subheader">Просто заполните форму заявки</div>
             <div class="modal-window__text">и мы перезвоним вам в течении 10 минут</div>
-            <form class="form form_modal-window" action="#">
-                <input class="form__input" name="name" required placeholder="Ваше имя" type="text">
-                <input class="form__input" name="phone" placeholder="Ваш телефон" type="number">
-                <input class="form__input" name="email" placeholder="Ваш E-mail" type="email">
+            <form id="callbackForm" class="form form_modal-window" action="#">
+                <input class="form__input" name="name" placeholder="Ваше имя">
+                <input class="form__input" name="phone" placeholder="Ваш телефон">
+                <input class="form__input" name="email" placeholder="Ваш E-mail">
                 <button class="button button_consultation mt14px ">заказать консультацию</button>
             </form>
         </div>
@@ -488,11 +488,11 @@
             <div class="modal-window__close">&#10006;</div>
             <div class="modal-window__subheader">Ваш заказ:</div>
             <div class="modal-window__text">Пульсометр Polar FT1</div>
-            <form class="form form_modal-window" action="#">
-                <input class="form__input" name="name" required placeholder="Ваше имя" type="text">
-                <input class="form__input" name="phone" placeholder="Ваш телефон" type="number">
-                <input class="form__input" name="email" placeholder="Ваш E-mail" type="email">
-                <button class="button button_consultation mt14px ">купить</button>
+            <form id="orderForm" class="form form_modal-window" action="#">
+                <input class="form__input" name="name" placeholder="Ваше имя">
+                <input class="form__input" name="phone" placeholder="Ваш телефон">
+                <input class="form__input" name="email" placeholder="Ваш E-mail">
+                <button class="button button_consultation mt14px">купить</button>
             </form>
         </div>
         <div class="modal-window__container modal-window__thanks">
@@ -508,6 +508,7 @@
     <script src="js/slick.min.js"></script> -->
     <script src="js/tiny-slider.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

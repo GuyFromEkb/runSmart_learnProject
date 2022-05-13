@@ -1,24 +1,25 @@
 "use strict";
-
-var slider = tns({
-    container: '.carusel__inner',
-    items: 1,
-    speed: 1400,
-    loop: true,
-    rewind: true,
-    nav: false,
-    controls: false
-
-});
-
-document.querySelector('.carusel__prev-btn').onclick = function() {
-    slider.goTo('prev');
-};
-document.querySelector('.carusel__next-btn').onclick = function() {
-    slider.goTo('next');
-};
-
 $(document).ready(function() {
+
+    var slider = tns({
+        container: '.carusel__inner',
+        items: 1,
+        speed: 1400,
+        loop: true,
+        rewind: true,
+        nav: false,
+        controls: false
+
+    });
+
+    document.querySelector('.carusel__prev-btn').onclick = function() {
+        slider.goTo('prev');
+    };
+    document.querySelector('.carusel__next-btn').onclick = function() {
+        slider.goTo('next');
+    };
+
+
 
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
@@ -40,65 +41,128 @@ $(document).ready(function() {
     TabInfo('.catalog-item__link');
     TabInfo('.catalog-item__link_back');
 
-});
 
-//  Modal Windows
 
-$('[data-modal=consultation]').on('click', function() {
-    $('.modal-window, #callBack ').fadeIn('slow');
-});
+    //  Modal Windows
 
-$('.button_catalog').each(function(i) {
-    $(this).on('click', function() {
-        $('#order .modal-window__text').text($('.catalog-item__subtitle').eq(i).text());
-        $('.modal-window, #order ').fadeIn('slow');
+    $('[data-modal=consultation]').on('click', function() {
+        $('.modal-window, #callBack ').fadeIn('slow');
     });
-});
-$('.modal-window__close ').on('click', function() {
-    $('.modal-window , #order , #callBack').fadeOut('slow');
-});
 
-// jQuery validator
-
-function formValidate(idItem) {
-    $(idItem).validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 2
-            },
-            phone: {
-                required: true,
-                digits: true,
-                minlength: 9
-
-            },
-            email: {
-                required: true,
-                email: true
-
-            }
-        },
-        messages: {
-            name: {
-                required: "Нам нужно знать как к вам обращаться",
-                minlength: jQuery.validator.format("Ваше имя не может быть короче {0} букв ")
-            },
-            phone: {
-                minlength: "Формат для ввода номера:<br>89001112233",
-                required: "Введите ваш мобильный номер телефона",
-                digits: "Формат для ввода номера:<br>89001112233"
-            },
-            email: {
-                required: "Укажите ваш E-mail адрес",
-                email: "Формат для ввода e-mail:<br>name@domain.com"
-            }
-        },
+    $('.button_catalog').each(function(i) {
+        $(this).on('click', function() {
+            $('#order .modal-window__text').text($('.catalog-item__subtitle').eq(i).text());
+            $('.modal-window, #order ').fadeIn('slow');
+        });
     });
-}
+    $('.modal-window__close ').on('click', function() {
+        $('.modal-window , #thanks, #order , #callBack').fadeOut('slow');
+    });
 
-formValidate('#orderForm');
+    // jQuery validator
 
-formValidate('#siteForm');
+    function formValidate(idItem) {
+        $(idItem).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: {
+                    required: true,
+                    minlength: 15
 
-formValidate('#callbackForm');
+                },
+                email: {
+                    required: true,
+                    email: true
+
+                }
+            },
+            messages: {
+                name: {
+                    required: "Нам нужно знать как к вам обращаться",
+                    minlength: jQuery.validator.format("Ваше имя не может быть короче {0} букв ")
+                },
+                phone: {
+                    minlength: "Формат для ввода номера:<br>+7 900 1111-333",
+                    required: "Введите ваш мобильный номер телефона",
+                    digits: "Формат для ввода номера:<br>+7 900 1111-333"
+                },
+                email: {
+                    required: "Укажите ваш E-mail адрес",
+                    email: "Формат для ввода e-mail:<br>name@domain.com"
+                }
+            },
+        });
+    }
+
+    formValidate('#orderForm');
+
+    formValidate('#siteForm');
+
+    formValidate('#callbackForm');
+
+    //  *jQuery mask phone*
+
+    // $('input[name=phone]').mask("+7(999) 999-9999");
+
+    //клик по центру, плагин
+    $.fn.setCursorPosition = function(pos) {
+        if ($(this).get(0).setSelectionRange) {
+            $(this).get(0).setSelectionRange(pos, pos);
+        } else if ($(this).get(0).createTextRange) {
+            var range = $(this).get(0).createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    };
+
+
+    $('input[name=phone]').click(function() {
+        $(this).setCursorPosition(3);
+    }).mask("+7(999) 999-9999");
+
+    //  *jQuery отправка форм по email*
+    $('form').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#order , #callBack').fadeOut();
+            $('.modal-window , #thanks').fadeIn();
+            $('form').trigger('reset');
+        });
+        return false;
+
+    });
+
+    //  *Smooth Scroll*
+
+
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+
+    //Короче это говно не работает, я не понял почему, тупил 2 часа и все равно не понял, спросить у того, кто шарит!(пробовал разные вариации)
+
+    /*     $("a[href=#up]").on("click", function(e) {
+            var anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(anchor.attr('href')).offset().top
+            }, 777);
+            e.preventDefault();
+            return false;
+        }); */
+});

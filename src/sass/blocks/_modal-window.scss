@@ -53,7 +53,7 @@
     &__thanks {
         display: none;
         width: 422px;
-        height: 143px;
+        min-height: 143px;
         .modal-window__subheader {
             font-size: 23px;
         }

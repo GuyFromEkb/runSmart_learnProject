@@ -165,4 +165,19 @@ $(document).ready(function() {
             e.preventDefault();
             return false;
         }); */
+
+    //    *Wow animated*
+
+    const wow = new WOW({
+        boxClass: 'wow', // default
+        animateClass: 'animate', // default
+        offset: 0, // default
+        mobile: true, // default
+        live: false // default
+    });
+    wow.init();
+
+    // new WOW().init();
+
+
 });

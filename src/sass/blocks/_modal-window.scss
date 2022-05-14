@@ -21,18 +21,36 @@
         color: #0D0D0D;
     }
     &__close {
-        transition: 0.5s all;
+        transition: 0.3s all;
+        position: absolute;
+        right: -35px;
+        top: -12px;
+        width: 30px;
+        height: 30px;
+        opacity: 0.7;
         cursor: pointer;
-        position: fixed;
-        color: $main-color;
-        top: -22px;
-        right: -33px;
-        font-size: 31px;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 11px;
+            transform: rotate(45deg);
+            display: block;
+            border-radius: 10px;
+            background-color: #c70101;
+            height: 4px;
+            width: 30px;
+            transition: 12s all;
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
         &:hover {
-            transform: rotate(90deg);
+            opacity: 1;
         }
     }
     &__container {
+        border-radius: 10px;
         // display: none;
         padding-bottom: 28px;
         padding-top: 28px;

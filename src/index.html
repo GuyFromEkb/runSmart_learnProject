@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="css/style.min.css">
     <!-- <link rel="stylesheet" href="css/slick.css"> -->
-    <title>Document</title>
+    <title>Pulse</title>
 </head>
 
 <body>
@@ -32,9 +33,9 @@
                 </div>
             </header>
 
-            <div class="promo__header">Подбор пульсометра
+            <h1 class="promo__header">Подбор пульсометра
                 <span>с учётом Вашего уровня подготовки</span>
-            </div>
+            </h1>
             <div class="promo__icons">
                 <div class="promo__icons-block">
                     <div class="promo__icon"><img src="icons/main_screen/timer.png" alt="timer"></div>
@@ -51,7 +52,7 @@
             </div>
             <div class="promo__warp-footer">
                 <button data-modal="consultation" class="button promo__button">заказать консультацию</button>
-                <div class="promo__to-catalog">или <a href="#yakor"> ПЕРЕЙТИ В КАТАЛОГ</a></div>
+                <div class="promo__to-catalog">или <a href="#catalog__move"> ПЕРЕЙТИ В КАТАЛОГ</a></div>
             </div>
 
         </div>
@@ -74,7 +75,9 @@
                 <div class="benefits__block">
                     <img src="icons/advantages/shoe.png" alt="shoe">
                     <div class="benefits__block-subheader">Учим бегать</div>
-                    <div class="benefits__block-text">Помогаем с обучением правильной технике бега! Дружим с крупнейшей школой бега в России - <span> I LOVE RUNNING. </span></div>
+                    <div class="benefits__block-text">Помогаем с обучением правильной технике бега! Дружим с крупнейшей школой бега в России -
+                        <a href="#"> <span> I LOVE RUNNING. </span> </a>
+                    </div>
                 </div>
             </div>
 
@@ -95,15 +98,15 @@
         </div>
     </section>
 
-    <section class="carusel">
+    <div class="carusel">
         <div class="container">
             <div class="carusel__inner">
                 <div><img src="img/slide_1.jpg" alt="slide_1"></div>
                 <div><img src="img/slide_2.jpg" alt="slide_2"></div>
                 <div><img src="img/slide_3.jpg" alt="slide_3"></div>
             </div>
-            <button class="carusel__prev-btn"><img src="icons/left.svg"></button>
-            <button class="carusel__next-btn"><img src="icons/right.svg"></button>
+            <button class="carusel__prev-btn"><img src="icons/left.svg" alt="arrow_left"> </button>
+            <button class="carusel__next-btn"><img src="icons/right.svg" alt="arrow_right"> </button>
 
             <!-- <div class="carusel__inner">
                 <div><img src="img/slide_1.jpg" alt="slide_1"></div>
@@ -114,11 +117,11 @@
 
         </div>
 
-    </section>
+    </div>
 
     <section class="catalog">
         <div class="container">
-            <h2 id="yakor" class="subheader subheader_catalog">Каталог пульсометров</h2>
+            <h2 id="catalog__move" class="subheader subheader_catalog">Каталог пульсометров</h2>
             <ul class="catalog__tabs">
                 <li class="catalog__tab catalog__tab_active">
                     <div>Для фитнеса</div>
@@ -309,7 +312,7 @@
                 <div class="catalog-item">
                     <div class="catalog-item__wrapper">
                         <div class="catalog-item__content catalog-item__content_active">
-                            <img src="img/pulsometr.png" class="catalog-item__img">
+                            <img src="img/pulsometr.png" class="catalog-item__img" alt="pulsometr">
                             <div class="catalog-item__subtitle">Пульсометр Suunto P13</div>
                             <div class="catalog-item__descr">Для первых шагов в тренировках, основанных на сердечном ритме</div>
                             <a href="" class="catalog-item__link">ПОДРОБНЕЕ</a>
@@ -337,7 +340,7 @@
                 <div class="catalog-item">
                     <div class="catalog-item__wrapper">
                         <div class="catalog-item__content catalog-item__content_active">
-                            <img src="img/pulsometr.png" class="catalog-item__img">
+                            <img src="img/pulsometr.png" class="catalog-item__img" alt="pulsometr">
                             <div class="catalog-item__subtitle">Пульсометр Polar FT1</div>
                             <div class="catalog-item__descr">Для первых шагов в тренировках, основанных на сердечном ритме</div>
                             <a href="" class="catalog-item__link">ПОДРОБНЕЕ</a>
@@ -367,7 +370,7 @@
                 <div class="catalog-item">
                     <div class="catalog-item__wrapper">
                         <div class="catalog-item__content catalog-item__content_active">
-                            <img src="img/pulsometr.png" class="catalog-item__img">
+                            <img src="img/pulsometr.png" class="catalog-item__img" alt="pulsometr">
                             <div class="catalog-item__subtitle">Пульсометр Santor Z3x</div>
                             <div class="catalog-item__descr">Для первых шагов в тренировках, основанных на сердечном ритме</div>
                             <a href="" class="catalog-item__link">ПОДРОБНЕЕ</a>
@@ -441,7 +444,7 @@
         </div>
     </section>
     <footer class="footer">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa578f9788a9f0034f7ae712738e32d71045c29bd240b2307b9c4fbf321a5f2e&amp;width=100%25&amp;height=630&amp;lang=ru_RU&amp;scroll=none"></script>
+        <script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa578f9788a9f0034f7ae712738e32d71045c29bd240b2307b9c4fbf321a5f2e&amp;width=100%25&amp;height=630&amp;lang=ru_RU&amp;scroll=none"></script>
         <div class="footer__info">
             <div class="footer__adr">Москва, Мясницкий проезд, д.3с1</div>
             <a href="tel:+74999228974" class="footer__tel">8 (499) 922-89-74</a>
@@ -478,7 +481,7 @@
 
         </div>
     </footer>
-    <section class="modal-window">
+    <div class="modal-window">
         <div class="modal-window__black-scr"></div>
         <div id="callBack" class="modal-window__container modal-window__call-back">
             <div class="modal-window__close">
@@ -510,14 +513,14 @@
             <div class="modal-window__subheader">Спасибо за вашу заявку!</div>
             <div class="modal-window__text">Наш менеджер свяжется с вами <br> в ближайшее время!</div>
         </div>
-    </section>
+    </div>
 
-    <section class="scrollup">
+    <div class="scrollup">
 
         <a href="#up">
             <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m2.014 11.998c0 5.517 4.48 9.997 9.998 9.997s9.997-4.48 9.997-9.997c0-5.518-4.479-9.998-9.997-9.998s-9.998 4.48-9.998 9.998zm6.211-1.524s1.505-1.501 3.259-3.254c.146-.147.338-.22.53-.22s.384.073.53.22c1.754 1.752 3.258 3.254 3.258 3.254.145.145.217.335.217.526 0 .192-.074.384-.221.53-.292.293-.766.295-1.057.004l-1.977-1.977v6.693c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-6.693l-1.979 1.978c-.289.289-.761.287-1.054-.006-.147-.147-.221-.339-.222-.53 0-.191.071-.38.216-.525z" fill-rule="nonzero"/></svg>
         </a>
-    </section>
+    </div>
 
 
     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>

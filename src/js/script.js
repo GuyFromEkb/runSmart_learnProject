@@ -126,21 +126,35 @@ $(document).ready(function() {
     }).mask("+7(999) 999-9999");
 
     //  *jQuery отправка форм по email*
+
+    //заглушка. т.к. на github pages не работает php и я не могу!!!!!! понять как сделать!!
+
+
     $('form').submit(function(e) {
         e.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: "mailer/smart.php",
-            data: $(this).serialize()
-        }).done(function() {
-            $(this).find("input").val("");
-            $('#order , #callBack').fadeOut();
-            $('.modal-window , #thanks').fadeIn();
-            $('form').trigger('reset');
-        });
-        return false;
+        $('#order , #callBack').fadeOut();
+        $('.modal-window , #thanks').fadeIn();
+        $('form').trigger('reset');
 
     });
+
+
+
+    // $('form').submit(function(e) {
+    //     e.preventDefault();
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "mailer/smart.php",
+    //         data: $(this).serialize()
+    //     }).done(function() {
+    //         $(this).find("input").val("");
+    //         $('#order , #callBack').fadeOut();
+    //         $('.modal-window , #thanks').fadeIn();
+    //         $('form').trigger('reset');
+    //     });
+    //     return false;
+
+
 
     //  *Smooth Scroll*
 

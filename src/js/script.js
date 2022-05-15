@@ -127,14 +127,21 @@ $(document).ready(function() {
 
     //  *jQuery отправка форм по email*
 
-    //заглушка. т.к. на github pages не работает php и я не могу!!!!!! понять как сделать!!
+    //заглушка. т.к. на github pages не работает php
 
 
     $('form').submit(function(e) {
-        e.preventDefault();
-        $('#order , #callBack').fadeOut();
-        $('.modal-window , #thanks').fadeIn();
-        $('form').trigger('reset');
+        if (e.result == false)
+            return false;
+        else {
+            e.preventDefault();
+            $('#order , #callBack').fadeOut();
+            $('.modal-window , #thanks').fadeIn();
+            $('form').trigger('reset');
+
+            setTimeout(() => alert("*заглушка вместо php скрипта, который отправляет данные,например на email*\n\nДАННЫЕ ОТПРАВЛЕНЫ"), 500);
+        }
+
 
     });
 

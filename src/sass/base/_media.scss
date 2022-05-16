@@ -1,0 +1,38 @@
+ @media (max-width: 991px) {
+     .container {
+         width: 770px;
+     }
+     .catalog {
+         &__content {
+             justify-content: space-evenly;
+         }
+         &-item {
+             &:nth-child(3n+3) {
+                 margin-right: 20px;
+             }
+         }
+     }
+     .review {
+         &-item {
+             &__descr {
+                 width: auto;
+             }
+         }
+     }
+     .footer {
+         height: 500px;
+         &__info {
+             padding-top: 32px;
+             width: 355px;
+             height: 235px;
+         }
+     }
+ }
+ 
+ @media (max-width: 767px) {
+     .container {
+         width: 580px;
+     }
+ }
+ 
+ @media (max-width: 575px) {}

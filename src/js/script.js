@@ -1,16 +1,21 @@
 "use strict";
 $(document).ready(function() {
 
+    //  tiny-Slider
+
     var slider = tns({
         container: '.carusel__inner',
         items: 1,
         speed: 1400,
         loop: true,
         rewind: true,
-        nav: false,
-        controls: false
-
+        nav: true,
+        controls: false,
+        navPosition: "bottom"
     });
+
+
+
 
     document.querySelector('.carusel__prev-btn').onclick = function() {
         slider.goTo('prev');
@@ -19,7 +24,7 @@ $(document).ready(function() {
         slider.goTo('next');
     };
 
-
+    //  Tabs
 
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
@@ -168,7 +173,7 @@ $(document).ready(function() {
 
 
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 1100) {
+        if ($(this).scrollTop() > 1100 && screen.width > 575) {
             $('.scrollup').fadeIn();
         } else {
             $('.scrollup').fadeOut();

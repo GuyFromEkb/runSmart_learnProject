@@ -86,7 +86,7 @@
     <section class="consultation">
         <div class="container">
             <h2 class="subheader subheader_consultation">Получите бесплатную консультацию <br> по подбору пульсометра </h2>
-            <div class="consultation__text">Просто заполните форму заявки <br> и мы перезвоним вам в течении <span>10</span> минут</div>
+            <div class="consultation__text">Просто заполните форму заявки <br class="consultation__br-display"> и мы <br class="consultation__br-no-display"> перезвоним вам в течении <span>10</span> минут</div>
             <form id="siteForm" class="form" action="#">
                 <input class="form__input" name="name" placeholder="Ваше имя">
                 <input class="form__input" name="phone" placeholder="Ваш телефон">
@@ -445,7 +445,17 @@
         </div>
     </section>
     <footer class="footer">
-        <script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa578f9788a9f0034f7ae712738e32d71045c29bd240b2307b9c4fbf321a5f2e&amp;width=100%25&amp;lang=ru_RU&amp;scroll=none"></script>
+
+
+        <script>
+            {
+                if (screen.width > 575) document.write('<script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aaa578f9788a9f0034f7ae712738e32d71045c29bd240b2307b9c4fbf321a5f2e&amp;width=100%25&amp;lang=ru_RU&amp;scroll=none"></sc' + 'ript>');
+            }
+        </script>
+
+
+
+
         <div class="footer__info">
             <div class="footer__adr">Москва, Мясницкий проезд, д.3с1</div>
             <a href="tel:+74999228974" class="footer__tel">8 (499) 922-89-74</a>
